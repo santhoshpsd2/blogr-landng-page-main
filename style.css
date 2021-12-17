@@ -1,0 +1,584 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
+
+:root {
+  --ubuntu-font-400-500-700: "Ubuntu", sans-serif;
+  --overpass-font-300-600: "Overpass", sans-serif;
+  --light-red-CTA-text: hsl(356, 100%, 66%);
+  --v-light-red-cta-hover-bg: hsl(355, 100%, 74%);
+  --v-dark-blue-headings: hsl(208, 49%, 24%);
+  --gray-blue-footer-text: hsl(240, 2%, 79%);
+  --v-dark-gray-blue-body-copy: hsl(207, 13%, 34%);
+  --v-dark-black-blue-footer-bg: hsl(240, 10%, 16%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+header {
+  background: url(./images/bg-pattern-intro-mobile.svg),
+    linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  background-size: 350%, 100%;
+  background-repeat: no-repeat;
+  background-position: bottom -450px left -350px, left 0 top 0;
+  padding: 2rem 1.5rem;
+  height: 75vh;
+  border-bottom-left-radius: 6rem;
+  position: relative;
+}
+
+.main-nav {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  list-style: none;
+}
+
+.main-nav-desktop {
+  display: none;
+}
+
+.main-nav.active {
+  display: block;
+}
+
+.main-nav,
+.main-nav-desktop ul {
+  list-style: none;
+}
+
+.main-nav,
+.main-nav-desktop a {
+  text-decoration: none;
+}
+
+.dropdown > .link {
+  cursor: pointer;
+  color: var(--v-dark-blue-headings);
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.dropdown-menu a {
+  color: hsl(208, 49%, 24%);
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  list-style: none;
+  display: none;
+  margin-top: 1rem;
+  padding: 0.7rem 0;
+  background-color: hsl(0, 0%, 89%);
+  width: 100%;
+  border-radius: 0.3rem;
+}
+
+.main-nav li + li {
+  margin-top: 1.5rem;
+}
+
+.dropdown-menu li + li {
+  margin-top: 0.75rem;
+}
+
+.login {
+  color: var(--v-dark-blue-headings);
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.signup {
+  background: linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 2rem;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.hr-line {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background: black;
+  opacity: 0.1;
+  margin-block: 1rem;
+}
+
+.dropdown.active .dropdown-menu {
+  display: block;
+}
+
+.dropdown.active .link span img {
+  transform: rotate(180deg);
+}
+
+.nav_logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  width: 70px;
+}
+
+.hamburger,
+.close_button {
+  cursor: pointer;
+  height: 25px;
+  width: 30px;
+}
+
+.close_button {
+  display: none;
+}
+
+.hamburger.active {
+  display: none;
+}
+
+.close_button.active {
+  display: block;
+}
+
+.header_text {
+  color: #fff;
+  text-align: center;
+  height: 100%;
+  /* padding: 0.5rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_text h1 {
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+}
+
+.header_text p {
+  font-family: var(--overpass-font-300-600);
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.header_buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.free {
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+  color: var(--light-red-CTA-text);
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: var(--ubuntu-font-400-500-700);
+  font-weight: 700;
+}
+
+.free:hover {
+  background-color: var(--v-light-red-cta-hover-bg);
+  color: white;
+}
+
+.more {
+  cursor: pointer;
+  border: 1px solid white;
+  color: #fff;
+  background: transparent;
+  padding: 0.7rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: var(--ubuntu-font-400-500-700);
+  font-weight: 700;
+}
+
+.main-top {
+  padding: 5rem 2rem;
+}
+
+.main-top h2,
+.top-div h3 {
+  text-align: center;
+  color: var(--v-dark-blue-headings);
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+.top-div h3 {
+  font-size: 1.8rem;
+}
+
+.main-img-div {
+  margin-bottom: 2rem;
+  display: flex;
+}
+
+.main-top-img {
+  max-width: 100%;
+  margin: auto;
+}
+
+.top-div p {
+  text-align: center;
+  line-height: 1.5rem;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1rem;
+  color: hsl(208, 49%, 24%, 0.5);
+}
+
+.main-top .top-div:nth-of-type(2n) {
+  margin-bottom: 2rem;
+}
+
+.main-mid {
+  padding: 14rem 2rem 6rem;
+  background: url(./images/bg-pattern-circles.svg);
+  background-size: 150%;
+  background-position: top -200px left -100px;
+  background-repeat: no-repeat;
+  background-color: hsl(208, 49%, 24%);
+  border-bottom-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+  position: relative;
+  margin-top: 10rem;
+}
+
+.main-mid img {
+  position: absolute;
+  max-width: 100%;
+  left: 0;
+  top: -180px;
+}
+
+.mid-div h2 {
+  text-align: center;
+  color: #fff;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 2.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.mid-div p {
+  text-align: center;
+  color: #fff;
+  opacity: 0.9;
+  line-height: 1.5rem;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 300;
+}
+
+.main-bottom {
+  padding: 3rem 2rem;
+}
+
+.main-bottom img {
+  max-width: 100%;
+}
+
+.bottom-div h2 {
+  text-align: center;
+  color: var(--v-dark-blue-headings);
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+
+.bottom-div p {
+  text-align: center;
+  line-height: 1.5rem;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+  font-size: 1rem;
+  color: hsl(208, 49%, 24%, 0.5);
+}
+
+.main-bottom .bottom-div:first-of-type {
+  margin-bottom: 3rem;
+}
+
+footer {
+  background-color: var(--v-dark-black-blue-footer-bg);
+  color: var(--gray-blue-footer-text);
+  border-top-right-radius: 6rem;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.bottom-logo {
+  margin-bottom: 3.5rem;
+}
+
+footer ul {
+  list-style: none;
+  margin-bottom: 2.5rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 300;
+}
+
+footer li + li {
+  margin-top: 0.7rem;
+}
+
+footer ul li:first-child {
+  margin-bottom: 1.5rem;
+}
+
+footer ul li:first-child a {
+  color: white;
+  font-family: var(--overpass-font-300-600);
+  font-weight: 600;
+}
+
+@media (min-width: 1200px) {
+  header {
+    background: url(./images/bg-pattern-intro-desktop.svg),
+      linear-gradient(
+        90deg,
+        hsl(13, 100%, 72%),
+        hsl(353, 100%, 62%),
+        hsl(353, 100%, 62%)
+      );
+    background-size: 200%;
+    background-position: left -400px bottom -1100px, left 0 top 0;
+    padding: 3rem 8rem;
+  }
+
+  .ham_close_button {
+    display: none;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .nav_logo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  nav {
+    margin-left: 2rem;
+  }
+
+  .main-nav-desktop {
+    width: 100%;
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto 1fr auto;
+    gap: 2rem;
+  }
+
+  .login {
+    color: white;
+  }
+
+  .dropdown > .link {
+    color: white;
+    position: relative;
+  }
+
+  .dropdown > .link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background-color: white;
+    display: none;
+  }
+
+  .dropdown > .link:hover::before {
+    display: block;
+  }
+
+  .login {
+    cursor: pointer;
+    justify-self: end;
+  }
+
+  .signup {
+    background: white;
+    color: var(--light-red-CTA-text);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-family: var(--ubuntu-font-400-500-700);
+    font-weight: 700;
+  }
+
+  .signup:hover {
+    background-color: var(--v-light-red-cta-hover-bg);
+    color: white;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    background-color: white;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    padding: 1rem 0.7rem;
+  }
+
+  .dropdown-menu a {
+    color: hsl(240, 5%, 68%);
+  }
+
+  .dropdown-menu > li:hover a {
+    color: hsl(208, 49%, 24%);
+  }
+
+  .header_text h1 {
+    font-size: 3.5rem;
+  }
+
+  .header_text p {
+    font-size: 1.4rem;
+    opacity: 0.75;
+  }
+
+  .main-top {
+    padding: 6rem 0 8rem 8rem;
+    margin-top: 3rem;
+    background: url(./images/illustration-editor-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top 0px right -300px;
+  }
+
+  .main-img-div {
+    display: none;
+  }
+
+  .main-top h2 {
+    font-size: 2.2rem;
+    margin-bottom: 6rem;
+  }
+
+  .top-div h3 {
+    text-align: left;
+  }
+
+  .top-div p {
+    text-align: left;
+    padding-right: 60%;
+  }
+
+  .main-top .top-div:nth-of-type(1n) {
+    margin-bottom: 5rem;
+  }
+
+  .main-mid {
+    padding: 7rem 14rem 6rem 50%;
+    margin-top: 4rem;
+    background-size: 60%;
+    background-position: top -400px left -175px;
+    border-bottom-left-radius: 6rem;
+    border-top-right-radius: 5rem;
+  }
+
+  .main-mid img {
+    left: 120px;
+    top: -75px;
+  }
+
+  .mid-div h2 {
+    text-align: left;
+    font-size: 2rem;
+  }
+
+  .mid-div p {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+
+  .main-bottom {
+    padding: 15rem 13rem 12rem 50%;
+    background: url(./images/illustration-laptop-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: left -300px top 0;
+    background-size: contain;
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+  }
+
+  .main-bottom img {
+    display: none;
+  }
+
+  .bottom-div h2 {
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .bottom-div p {
+    text-align: left;
+  }
+
+  .main-bottom .bottom-div:first-of-type {
+    margin-bottom: 4rem;
+  }
+
+  footer {
+    padding: 3rem 15rem 3rem 6rem;
+    display: flex;
+    gap: 15rem;
+    text-align: left;
+  }
+
+  footer img {
+    object-fit: contain;
+    align-self: flex-start;
+  }
+}
